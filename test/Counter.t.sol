@@ -9,7 +9,6 @@ contract CounterTest is Test {
 
     function setUp() public {
         counter = new Counter();
-
     }
 
     function testInc() public {
@@ -25,12 +24,13 @@ contract CounterTest is Test {
         vm.expectRevert(stdError.arithmeticError);
         counter.dec();
     }
+
     function testDec() public {
         counter.inc();
         counter.inc();
         counter.inc();
         counter.dec();
-        assertEq(counter.count(),2);
+        assertEq(counter.count(), 2);
     }
 
     function testHello() public {
@@ -45,5 +45,4 @@ contract CounterTest is Test {
         counter.returnSender();
         assertEq(counter.returnSender(), 1);
     }
-
 }
